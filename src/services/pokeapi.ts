@@ -71,3 +71,29 @@ export async function fetchPokemonDetail(
   return response.json();
 }
 
+export type PokemonSpeciesResponde = {
+  flavor_text_entries: {
+    flavor_text: string;
+    language: {
+      name:string;
+      url:string;
+    };
+    version: {
+      name: string;
+      url: string;
+    }
+  }[];
+}
+
+export async function fetchPokemonSpecies(
+  nameOrId: string | number,
+  options?: FetchOptions,
+): Promise<PokemonSpeciesResponde>{
+  const url = `${BASE_URL}/pokemon-species/${nameOrId}`;
+  const response = await fetch(url, {signal: options?.signal});
+
+  if(!response.ok) {
+    throw new Error('Falha ao buscar descrição do Pókemon.')
+  }
+  return response.json();
+}
