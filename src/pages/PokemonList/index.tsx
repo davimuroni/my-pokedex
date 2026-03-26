@@ -16,7 +16,7 @@ export default function PokemonListScreen() {
 
   const [items, setItems] = useState<PokemonListItemUI[]>([]);
   const [offset, setOffset] = useState(0);
-  const [hasNextPage, setHaxNextPage] = useState(true);
+  const [hasNextPage, setHasNextPage] = useState(true);
 
   const [isInitialLoading, setIsInitialLoading] = useState(true);
   const [isLoadingMore, setIsLoadingMore] = useState(false);

@@ -44,7 +44,7 @@ export async function fetchPokemonListPage(
   limit = 10,
   offset = 0,
   options?: FetchOptions
-); Promise<{
+): Promise<{
   items: PokemonListItemUI[];
   count: number;
   next: string | null;
